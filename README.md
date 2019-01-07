@@ -15,4 +15,4 @@ How to setup Karma config using PhantomJS to run tests on Azure DevOps
 - Add '"test-headless": "ng test --browsers=PhantomJS --watch=false"' to the 'script' section
 
 ## Azure DevOps
-- Add an npm Steps with the following 'custom' command 'run test-headless'
+- Add an 'npm' task with the following 'custom' command 'run test-headless'
