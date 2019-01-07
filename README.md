@@ -14,3 +14,9 @@ How to setup Karma config using PhantomJS to run tests on Azure DevOps
 ## Azure DevOps
 ### Build Pipeline
 - Add an 'npm' task with the following 'custom' command 'run test-headless'
+
+## References
+- https://www.npmjs.com/package/phantomjs-prebuilt
+- https://www.npmjs.com/package/karma-phantomjs-launcher
+- http://anthonygiretti.com/2017/12/11/how-to-run-unit-tests-in-vsts-during-ci-with-angular-5-and-phantomjs-part-1/
+- http://anthonygiretti.com/2017/12/11/how-to-run-unit-tests-in-vsts-during-ci-with-angular-5-and-phantomjs-part-2/
