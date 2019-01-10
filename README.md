@@ -1,24 +1,19 @@
-# Angular Azure DevOps PhantomJS (headless browser)
+# Run tests using Headless Chrome in Azure DevOps Build pipeline
 How to setup Karma config using PhantomJS to run tests on Azure DevOps
 
 ## Visual Studio Code
 ### Install required npm packages
-- npm install phantomjs-prebuilt --save-dev
-- npm install karma-phantomjs-launcher --save-dev
+- npm install karma-chrome-launcher --save-dev
 ### karma.config.js
-- Add 'require('karma-phantomjs-launcher')' to the the plugins array
+- Add 'require('karma-chrome-launcher')' to the the plugins array
 ### pollyfills.ts
-- Uncomment the BROWSER POLYFILLS section
+- Remains unchanged
 ### package.json
-- Add '"test-headless": "ng test --browsers=PhantomJS --watch=false"' to the 'script' section
+- Add '"test-headless": "ng test --browsers=ChromeHeadless --watch=false"' to the 'script' section
+
+It's important to include the watch=false flag since the pipeline task will timeout if it's continuously running.
 ### angular.json
 - If you need code coverage reports add '"codeCoverage": true' to the projects->name->test->options section
 ## Azure DevOps
 ### Build Pipeline
 - Add an 'npm' task with the following 'custom' command 'run test-headless'
-
-## References
-- https://www.npmjs.com/package/phantomjs-prebuilt
-- https://www.npmjs.com/package/karma-phantomjs-launcher
-- http://anthonygiretti.com/2017/12/11/how-to-run-unit-tests-in-vsts-during-ci-with-angular-5-and-phantomjs-part-1/
-- http://anthonygiretti.com/2017/12/11/how-to-run-unit-tests-in-vsts-during-ci-with-angular-5-and-phantomjs-part-2/
