@@ -1,5 +1,5 @@
-# Run Angular tests using Headless Chrome in Azure DevOps Build pipeline
-How to setup Karma config using PhantomJS to run tests on Azure DevOps
+# Run Angular tests using Headless Chrome, publish test results and code coverage
+How to setup Karma config using headless Chrome to run tests on Azure DevOps
 
 ## Visual Studio Code
 ### Install required npm packages
