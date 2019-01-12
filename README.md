@@ -6,12 +6,12 @@ How to setup Karma config using PhantomJS to run tests on Azure DevOps
 - npm i karma-chrome-launcher --save-dev
 - npm i karma-junit-reporter --save-dev
 ### karma.config.js
-- Add to plugins:
--- Add 'require('karma-chrome-launcher')'
--- Add 'require('karma-junit-reporter')'
+#### Add to plugins:
+- Add 'require('karma-chrome-launcher')'
+- Add 'require('karma-junit-reporter')'
 - Add junitReport section according to https://www.npmjs.com/package/karma-junit-reporter
--- Add to reporters array:
--- 'junit'
+##### Add to reporters array:
+- 'junit'
 ### pollyfills.ts
 - Remains unchanged
 ### package.json
@@ -25,4 +25,5 @@ It's important to include the watch=false flag since the pipeline task will time
 ## Azure DevOps
 ### Build Pipeline
 - Add an 'npm' task with the following 'custom' command 'run test-headless'
-## References:
+- Add Publish Tests Results task
+- Add Publish Code Coverage task
